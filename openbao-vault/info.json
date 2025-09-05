@@ -1,0 +1,148 @@
+{
+  "name": "openbao-vault",
+  "version": "1.0.0",
+  "label": "OpenBao Vault",
+  "description": "OpenBao is an identity-based secrets and encryption management system, designed to securely manage, store, and distribute sensitive data such as API keys, passwords, certificates, and more.",
+  "publisher": "Fortinet",
+  "contributor": "",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "tags": [
+    "vault"
+  ],
+  "category": "Vault",
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "ingestion_supported": false,
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "description": "Specify the URL of the OpenBao server to which you will connect and perform automated operations.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "tooltip": "Specify the URL of the OpenBao server to which you will connect and perform automated operations."
+      },
+      {
+        "title": "Access Token",
+        "name": "token",
+        "description": "Specify the token of the OpenBao server to which you will connect and perform automated operations.",
+        "type": "password",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "tooltip": "Specify the token of the OpenBao server to which you will connect and perform automated operations."
+      },
+      {
+        "title": "Namespace",
+        "name": "namespace",
+        "description": "Specify the namespace OpenBao server to which you will connect and perform automated operations.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "tooltip": "Specify the namespace OpenBao server to which you will connect and perform automated operations."
+      },
+      {
+        "title": "Secret Engine Name",
+        "name": "secret_name",
+        "description": "Specify the name of the secret engine based on which you will connect and perform automated operations.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "tooltip": "Specify the name of the secret engine based on which you will connect and perform automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_credentials",
+      "visible": false,
+      "category": "investigation",
+      "annotation": "get_credentials",
+      "description": "Get a list of all the accounts in the Vault.",
+      "title": "Get Credentials",
+      "parameters": [],
+      "output_schema": {
+        "key": "",
+        "display_name": ""
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_credentials_details",
+      "visible": false,
+      "category": "investigation",
+      "annotation": "get_credentials_details",
+      "description": "Get information about an account identified by its ID.",
+      "title": "Get Credentials Details",
+      "parameters": [
+        {
+          "title": "Secret ID",
+          "description": "ID for which you want to retrieves the details of account that you have specified from the Vault.",
+          "name": "secret_id",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "ID for which you want to retrieves the details of account that you have specified from the Vault."
+        }
+      ],
+      "output_schema": {
+        "field_name": "",
+        "value": ""
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_credential",
+      "visible": false,
+      "category": "investigation",
+      "annotation": "get_credential",
+      "description": "It enables users to retrieve the password or SSH key of an existing account that is identified by its account ID.",
+      "title": "Get Credential",
+      "parameters": [
+        {
+          "title": "Secret ID",
+          "description": "ID for which you want to retrieves the password of account that you have specified from the Vault.",
+          "name": "secret_id",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "ID for which you want to retrieves the password of account that you have specified from the Vault."
+        },
+        {
+          "title": "Attribute Name",
+          "tooltip": "An attribute name among the available params from account id for whose value needs to be retrieved",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "attribute_name",
+          "description": "An attribute name among the available params from account id for whose value needs to be retrieved"
+        }
+      ],
+      "output_schema": {
+        "password": ""
+      },
+      "enabled": true
+    }
+  ]
+}
