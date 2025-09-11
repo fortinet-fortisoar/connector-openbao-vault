@@ -11,8 +11,6 @@ from connectors.core.connector import get_logger, ConnectorError
 
 logger = get_logger('openbao-vault')
 
-credentials = []
-
 
 class OpenBaoVault:
     def __init__(self, config):
@@ -75,12 +73,12 @@ def fetch_func(config, item):
     return resp
 
 
-def get_creds(config, params, items):
+def get_creds(config, params, items, credentials = []):
     openbao = OpenBaoVault(config)
     for item in items:
         if item.endswith("/"):
             sub_items = fetch_func(config, item)
-            get_creds(config, params, sub_items)
+            get_creds(config, params, sub_items, credentials)
         else:
             endpoint = "data/{0}".format(item)
             response = openbao.make_api_call(endpoint, method='GET')
