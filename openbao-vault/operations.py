@@ -73,7 +73,9 @@ def fetch_func(config, item):
     return resp
 
 
-def get_creds(config, params, items, credentials = []):
+def get_creds(config, params, items, credentials=None):
+    if credentials is None:
+        credentials = []
     openbao = OpenBaoVault(config)
     for item in items:
         if item.endswith("/"):
