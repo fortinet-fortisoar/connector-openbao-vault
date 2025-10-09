@@ -2,7 +2,7 @@
   "name": "openbao-vault",
   "version": "1.0.0",
   "label": "OpenBao Vault",
-  "description": "OpenBao is an identity-based secrets and encryption management system, designed to securely manage, store, and distribute sensitive data such as API keys, passwords, certificates, and more.",
+  "description": "OpenBao Vault is an identity-based system for securely managing and distributing secrets such as API keys, passwords, and certificates.",
   "publisher": "Fortinet",
   "contributor": "",
   "cs_approved": true,
@@ -11,7 +11,7 @@
     "vault"
   ],
   "category": "Vault",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/openbao-vault/100/openbao-vault-v1-0-0",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "ingestion_supported": false,
@@ -20,53 +20,53 @@
       {
         "title": "Server URL",
         "name": "server_url",
-        "description": "Specify the URL of the OpenBao server to which you will connect and perform automated operations.",
+        "description": "Specify the URL of the OpenBao Vault server to which you will connect and perform the automated operations.",
         "type": "text",
         "visible": true,
         "editable": true,
         "required": true,
-        "tooltip": "Specify the URL of the OpenBao server to which you will connect and perform automated operations."
+        "tooltip": "Specify the URL of the OpenBao Vault server to which you will connect and perform the automated operations."
       },
       {
         "title": "Access Token",
         "name": "token",
-        "description": "Specify the token of the OpenBao server to which you will connect and perform automated operations.",
+        "description": "Specify the token of the OpenBao Vault to which you will connect and perform the automated operations.",
         "type": "password",
         "visible": true,
         "editable": true,
         "required": true,
-        "tooltip": "Specify the token of the OpenBao server to which you will connect and perform automated operations."
+        "tooltip": "Specify the token of the OpenBao Vault to which you will connect and perform the automated operations."
       },
       {
         "title": "Namespace",
         "name": "namespace",
-        "description": "Specify the namespace OpenBao server to which you will connect and perform automated operations.",
+        "description": "Specify the namespace of the OpenBao Vault to which you will connect and perform the automated operations.",
         "type": "text",
         "visible": true,
         "editable": true,
         "required": true,
-        "tooltip": "Specify the namespace OpenBao server to which you will connect and perform automated operations."
+        "tooltip": "Specify the namespace of the OpenBao Vault to which you will connect and perform the automated operations."
       },
       {
         "title": "Secret Engine Name",
         "name": "secret_name",
-        "description": "Specify the name of the secret engine based on which you will connect and perform automated operations.",
+        "description": "Specify the secret engine name to be used for accessing the OpenBao Vault server.",
         "type": "text",
         "visible": true,
         "editable": true,
         "required": true,
-        "tooltip": "Specify the name of the secret engine based on which you will connect and perform automated operations."
+        "tooltip": "Specify the secret engine name to be used for accessing the OpenBao Vault server."
       },
       {
         "title": "Verify SSL",
-        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set as True.",
         "name": "verify_ssl",
         "type": "checkbox",
         "required": false,
         "editable": true,
         "visible": true,
         "value": true,
-        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set as True."
       }
     ]
   },
